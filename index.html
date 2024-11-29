@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reciclanip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form action="#" class="formulario">
+      <div class="title-container">
+        <p>
+          O Programa de Coleta e Destinação de Pneus Inservíveis desenvolvido
+          pela Reciclanip utiliza a tecnologia da GreenPlat e atende à Resolução
+          N.º 416, de 30 de setembro de 2009, do CONAMA (Conselho Nacional do
+          Meio Ambiente). De acordo com a Política Nacional de Resíduos Sólidos,
+          a PNRS, lei Nº 12.305, de 2 de agosto de 2010, a responsabilidade do
+          Ponto de Coleta é do varejo, uma vez que este deve retornar os
+          produtos para as fabricantes, que farão o processo de destinação
+          ambientalmente adequada dos pneus inservíveis.
+        </p>
+
+        <p>
+          A coleta deve ocorrer conforme o volume de descarte dos pneus
+          inservíveis no Ponto de Coleta baseando-se em um volume mínimo de
+          2.000 pneus de passeio (carro, moto, bicicleta e correlatos), 300
+          pneus de carga (ônibus, caminhão e correlatos) ou carga mista (por
+          exemplo, 1.000 pneus de passeio + 150 pneus de carga).
+        </p>
+
+        <p>* Campos obrigatórios</p>
+      </div>
+
+      <div class="title-container dados-empresa">
+        <h2 class="subtitulo">DADOS DA EMPRESA OU MUNICÍPIO</h2>
+      </div>
+
+      <div class="form-container cnpj">
+        <label for="cnpj">CNPJ</label>
+        <input type="text" name="cnpj" maxlength="17" id="cnpj" required />
+      </div>
+
+      <div class="form-container razao-social">
+        <label for="razao-social">Razão Social</label>
+        <input name="razao-social" type="text" id="razao-social" required />
+      </div>
+
+      <div class="form-container nome-fantasia">
+        <label for="nome-fantasia">Nome Fantasia</label>
+        <input name="nome-fantasia" type="text" id="nome-fantasia" required />
+      </div>
+      <div class="form-container inscricao-municipal">
+        <div class="ins-label-container">
+          <label for="inscricao-municipal" class="inscricao-municipal"
+            >Inscrição Municipal
+          </label>
+          <div class="content-tooltips-ins">
+            <i class="ph ph-info"></i>
+            <div class="tooltip-text">
+              <p class="">
+                <strong>Inscrição municipal:</strong> é o numero de
+                identificação do contribuinte no Cadastro Tributário Municipal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <input
+          name="inscricao-municipal"
+          type="text"
+          id="inscricao-municipal"
+        />
+      </div>
+      <div class="form-container cnai">
+        <div class="cnai-label-container">
+          <label for="cnai" class="cnai-label">CNAE </label>
+          <div class="content-tooltips">
+            <i class="ph ph-info"></i>
+            <div class="tooltip-text">
+              <p class="">
+                <strong>CNAE:</strong> Classificação Nacional de Atividades
+                Econômicas - código utilizado para identificcar quais são as
+                atividades econômicas exercidas por uma empresa.
+              </p>
+            </div>
+          </div>
+        </div>
+        <input name="cnai" type="number" id="cnai" />
+      </div>
+      <div class="form-container orgao-ambiental">
+        <div class="org-label-container">
+          <label for="orgao-ambiental" class="orgao-ambiental"
+            >Número Cad. Órgão Ambiental
+          </label>
+          <div class="content-tooltips-org">
+            <i class="ph ph-info"></i>
+            <div class="tooltip-text">
+              <p class="">
+                <strong>Número Cadastro Órgão Ambiental:</strong> registro de
+                caráter obrigatório para atividades com potencial poluidor e
+                também para aquelas que utilizam algum recurso ambiental.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <input name="orgao-ambiental" type="text" id="orgao-ambiental" />
+      </div>
+
+      <!-- SISTEMA PÚBLICO -->
+
+      <div class="form-container sistema-publico">
+        <label for="sistema-publico"
+          >Possui cadastro em algum sistema público de Manifesto de Transporte
+          de Resíduo?</label
+        >
+        <div class="sistema-publico-input-container">
+          <input type="radio" id="nao" name="sistema-publico" value="nao" />
+          <label for="nao">Não</label>
+
+          <input type="radio" id="sim" name="sistema-publico" value="sim" />
+          <label for="sim">Sim</label>
+        </div>
+      </div>
+
+      <!-- OPÇÕES APARECERÃO CASO A OPÇÃO SIM SEJA SELECIONADA -->
+
+      <div
+        id="campos-dinamicos"
+        class="form-container sistemas-publicos-options hidden"
+      >
+        <label
+          >Indique em qual(is) sistema(s) público(s) possui cadastro *</label
+        >
+        <div class="sistemas-publicos-options-container">
+          <input type="checkbox" name="feam" id="feam" />
+          <label for="feam">FEAM</label>
+
+          <input type="checkbox" name="fepam" id="fepam" />
+          <label for="fepam">FEPAM</label>
+
+          <input type="checkbox" name="ima-al" id="ima-al" />
+          <label for="ima-al">IMA-AL</label>
+
+          <input type="checkbox" name="ima-sc" id="ima-sc" />
+          <label for="ima-sc">IMA-SC</label>
+
+          <input type="checkbox" name="iema" id="iema" />
+          <label for="iema">IEMA</label>
+
+          <input type="checkbox" name="inea" id="inea" />
+          <label for="inea">INEA</label>
+
+          <input type="checkbox" name="sigor" id="sigor" />
+          <label for="sigor">SIGOR</label>
+
+          <input type="checkbox" name="sinir" id="sinir" />
+          <label for="sinir">SINIR</label>
+        </div>
+
+        <div class="sistemas-publicos-input-container">
+          <div class="form-container codigo-feam">
+            <label for="codigo-feam"
+              >Informe o código da unidade para o sistema FEAM *</label
+            >
+            <input name="codigo-feam" type="text" id="codigo-feam" />
+          </div>
+
+          <div class="form-container codigo-fepam">
+            <label for="codigo-fepam"
+              >Informe o código da unidade para o sistema FEPAM *</label
+            >
+            <input type="text" id="codigo-fepam" />
+          </div>
+
+          <div class="form-container codigo-ima-al">
+            <label for="codigo-ima-al"
+              >Informe o código da unidade para o sistema IMA-AL *</label
+            >
+            <input type="text" id="codigo-ima-al" />
+          </div>
+
+          <div class="form-container codigo-ima-sc">
+            <label for="codigo-ima-sc"
+              >Informe o código da unidade para o sistema IMA-SC *</label
+            >
+            <input type="text" id="codigo-ima-sc" />
+          </div>
+
+          <div class="form-container codigo-iema">
+            <label for="codigo-iema"
+              >Informe o código da unidade para o sistema IEMA *</label
+            >
+            <input type="text" id="codigo-iema" />
+          </div>
+
+          <div class="form-container codigo-inea">
+            <label for="codigo-inea"
+              >Informe o código da unidade para o sistema INEA *</label
+            >
+            <input type="text" id="codigo-inea" />
+          </div>
+
+          <div class="form-container codigo-sigor">
+            <label for="codigo-sigor"
+              >Informe o código da unidade para o sistema SIGOR *</label
+            >
+            <input type="text" id="codigo-sigor" />
+          </div>
+
+          <div class="form-container codigo-sinir">
+            <label for="codigo-sinir"
+              >Informe o código da unidade para o sistema SINIR *</label
+            >
+            <input type="text" id="codigo-sinir" />
+          </div>
+        </div>
+      </div>
+
+      <!-- DADOS DE ENDEREÇO DO PONTO DE COLETA -->
+
+      <div class="title-container ponto-coleta">
+        <h2 class="subtitulo">DADOS DE ENDEREÇO DO PONTO DE COLETA</h2>
+      </div>
+
+      <div class="cep-rua-container">
+        <div class="form-container cep">
+          <label for="cep">CEP</label>
+          <input type="number" id="cep" required />
+        </div>
+        <div class="form-container rua">
+          <label for="rua">Rua / Avenida</label>
+          <input type="text" id="rua" required />
+        </div>
+      </div>
+
+      <div class="numero-bairro-complemento">
+        <div class="form-container numero">
+          <label for="numero">Numero</label>
+          <input type="text" id="numero" required />
+        </div>
+        <div class="form-container bairro">
+          <label for="bairro">Bairro</label>
+          <input type="text" id="bairro" required />
+        </div>
+        <div class="form-container complemento">
+          <label for="complemento">Complemento</label>
+          <input type="text" id="complemento" />
+        </div>
+      </div>
+
+      <div class="cidade-estado-container">
+        <div class="form-container cidade">
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" required />
+        </div>
+
+        <div class="form-container estado">
+          <label for="estado">Estado</label>
+          <input type="text" id="estado" required />
+        </div>
+      </div>
+
+      <div class="telefone-capacidade-container">
+        <div class="form-container telefone-coleta">
+          <label for="telefone-coleta">Telefone do Ponto de Coleta *</label>
+          <input type="text" id="telefone-coleta" required />
+        </div>
+
+        <div class="form-container armazenamento">
+          <label for="armazenamento">Capacidade de Armazenamento *</label>
+          <input type="text" id="armazenamento" required />
+        </div>
+      </div>
+
+      <!-- DADOS DE CONTATO -->
+
+      <div class="title-container dados-contato">
+        <h2 class="subtitulo">DADOS DE CONTATO</h2>
+      </div>
+
+      <div class="nome-departamento-container">
+        <div class="form-container nome-completo">
+          <label for="nome-completo">Nome Completo *</label>
+          <input type="text" id="nome-completo" required />
+        </div>
+
+        <div class="form-container departamento">
+          <label for="departamento">Departamento *</label>
+          <input type="text" id="departamento" />
+        </div>
+      </div>
+
+      <div class="email-telefone-container">
+        <div class="form-container email">
+          <label for="email"
+            >E-mail * (informe corretamente seu e-mail para confirmação de
+            validação)</label
+          >
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="form-container telefone">
+          <label for="telefone">Telefone *</label>
+          <input type="tel" id="telefone" required />
+        </div>
+      </div>
+
+      <div class="form-container termos-container">
+        <input type="checkbox" id="termos" required />
+
+        <label for="termos"
+          >Autorizo o uso de meus dados com a finalidade de identificar-me e
+          receber retornos através dos meios informados.
+          <strong class="destaque">
+            Este site respeita a lei geral de proteção de dados.</strong
+          ></label
+        >
+      </div>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <div class="img">
+      <img class="logo" src="/img/logo_poweredby_semdegrade.png" alt="" />
+    </div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>

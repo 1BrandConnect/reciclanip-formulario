@@ -1,0 +1,482 @@
+:root {
+  --main-color: #7abf18;
+  --text-color: #202020;
+
+  --border-size: 1px;
+  --border-color: #909090;
+  --border-radius: 4px;
+
+  --error-color: red;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  font-size: 30px;
+  color: var(--main-color);
+  /* padding-bottom: 8px; */
+}
+
+.subtitulo {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--main-color);
+  padding-top: 16px 0 6px 0;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "title-container title-container title-container"
+    "dados-empresa dados-empresa dados-empresa"
+    "cnpj . . "
+    "razao-social razao-social razao-social "
+    "nome-fantasia nome-fantasia nome-fantasia"
+    "inscricao-municipal cnai orgao-ambiental"
+    "sistema-publico sistema-publico sistema-publico"
+    "sistemas-options sistemas-options sistemas-options"
+    "ponto-coleta ponto-coleta ponto-coleta"
+    "cep-rua-container cep-rua-container cep-rua-container"
+    "numero-bairro-complemento numero-bairro-complemento numero-bairro-complemento"
+    "cidade-estado-container cidade-estado-container cidade-estado-container"
+    "telefone-capacidade-container telefone-capacidade-container telefone-capacidade-container"
+    "dados-contato dados-contato dados-contato"
+    "nome-departamento-container nome-departamento-container nome-departamento-container"
+    "email-telefone-container email-telefone-container email-telefone-container"
+    "termos-container termos-container termos-container"
+    "btn btn btn";
+
+  gap: 28px;
+  max-width: 1140px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+}
+
+.title-container {
+  grid-area: title-container;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.dados-empresa {
+  grid-area: dados-empresa;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-container label {
+  font-weight: 500;
+  font-size: 14px;
+  padding-bottom: 6px;
+}
+
+.form-container input {
+  border: var(--border-size) solid var(--border-color);
+  border-radius: var(--border-radius);
+  height: 30px;
+  padding: 8px;
+  max-width: 100%;
+}
+
+.form-container input:focus {
+  border: 2px solid var(--main-color);
+}
+
+.cnpj {
+  grid-area: cnpj;
+}
+
+.razao-social {
+  grid-area: razao-social;
+}
+
+.nome-fantasia {
+  grid-area: nome-fantasia;
+}
+
+.inscricao-municipal {
+  grid-area: inscricao-municipal;
+}
+
+.ins-label-container {
+  position: relative;
+}
+
+.content-tooltips-ins {
+  display: block;
+  /* background-color: #202020; */
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 120px;
+}
+
+.content-tooltips-ins .ph-info {
+  margin-left: 8px;
+}
+
+.content-tooltips-ins .tooltip-text {
+  display: block;
+  background-color: white;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  padding: 16px;
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  top: -40px;
+  left: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.content-tooltips-ins:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cnai {
+  grid-area: cnai;
+}
+
+.cnai-label-container {
+  position: relative;
+}
+
+.content-tooltips {
+  display: block;
+  /* background-color: #202020; */
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 35px;
+}
+
+.ph-info {
+  margin-left: 8px;
+}
+
+.content-tooltips .tooltip-text {
+  display: block;
+  background-color: white;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  padding: 16px;
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  top: -60px;
+  left: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.content-tooltips:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+/* 
+.content-tooltips .tooltip-text::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  left: -30px;
+  top: 30%;
+  background-color: white;
+  border: 2px solid var(--main-color);
+} */
+/* .tooltip-icon:hover .tooltip-text {
+  opacity: 1;
+} */
+
+.content-tooltips .ph:hover .tooltip-text {
+  opacity: 1;
+}
+
+.orgao-ambiental {
+  grid-area: orgao-ambiental;
+}
+
+.org-label-container {
+  position: relative;
+}
+
+.content-tooltips-org {
+  display: block;
+  /* background-color: #202020; */
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 188px;
+}
+
+.content-tooltips-org .ph-info {
+  margin-left: 8px;
+}
+
+.content-tooltips-org .tooltip-text {
+  display: block;
+  background-color: white;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  padding: 16px;
+  position: absolute;
+  z-index: 2;
+  width: 300px;
+  top: -50px;
+  left: -300px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.content-tooltips-org:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sistema-publico {
+  grid-area: sistema-publico;
+}
+
+.sistema-publico-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sistema-publico-input-container label {
+  padding-right: 8px;
+}
+
+.sistemas-publicos-options {
+  grid-area: sistemas-options;
+  /* display: none; */
+  gap: 16px;
+}
+
+.sistemas-publicos-options-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sistemas-publicos-options-container label {
+  padding-right: 8px;
+  font-weight: 400;
+}
+
+.sistemas-publicos-input-container {
+  display: grid;
+  gap: 16px;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-areas:
+    "codigo-feam codigo-fepam"
+    "codigo-ima-al codigo-ima-sc"
+    "codigo-iema codigo-inea"
+    "codigo-sigor codigo-sinir";
+}
+
+.codigo-feam {
+  grid-area: codigo-feam;
+}
+
+.codigo-fepam {
+  grid-area: codigo-fepam;
+}
+
+.codigo-ima-al {
+  grid-area: codigo-ima-al;
+}
+
+.codigo-ima-sc {
+  grid-area: codigo-ima-sc;
+}
+
+.codigo-inema {
+  grid-area: codigo-iema;
+}
+
+.codigo-inea {
+  grid-area: codigo-inea;
+}
+
+.codigo-sinir {
+  grid-area: codigo-sinir;
+}
+
+.ponto-coleta {
+  grid-area: ponto-coleta;
+}
+
+.cep-rua-container {
+  grid-area: cep-rua-container;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 33% 66%;
+}
+
+.numero-bairro-complemento {
+  grid-area: numero-bairro-complemento;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+.cidade-estado-container {
+  grid-area: cidade-estado-container;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 3fr 2fr;
+}
+
+.telefone-capacidade-container {
+  grid-area: telefone-capacidade-container;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 3fr 2fr;
+}
+
+.dados-contato {
+  grid-area: dados-contato;
+}
+
+.nome-departamento-container {
+  grid-area: nome-departamento-container;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 3fr 2fr;
+}
+
+.email-telefone-container {
+  grid-area: email-telefone-container;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 3fr 2fr;
+}
+
+.termos-container {
+  grid-area: termos-container;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+
+.destaque {
+  color: var(--main-color);
+}
+
+.btn {
+  grid-area: btn;
+  color: white;
+  width: 248px;
+  text-transform: uppercase;
+  padding: 8px 0;
+  border-radius: 2px;
+  margin: auto;
+  background: transparent linear-gradient(90deg, #48c244 0%, #449b68 100%) 0% 0%
+    no-repeat padding-box;
+  border: none;
+  cursor: pointer;
+}
+
+.img {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .formulario {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title-container"
+      "cnpj"
+      "razao-social"
+      "nome-fantasia"
+      "inscricao-municipal"
+      "cnai"
+      "orgao-ambiental"
+      "sistema-publico"
+      "sistemas-options"
+      "ponto-coleta"
+      "cep-rua-container"
+      "numero-bairro-complemento"
+      "cidade-estado-container"
+      "telefone-capacidade-container"
+      "dados-contato"
+      "nome-departamento-container"
+      "email-telefone-container"
+      "termos-container "
+      "btn";
+    max-width: 100%;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .sistemas-publicos-options-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sistemas-publicos-input-container {
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+      "codigo-feam"
+      "codigo-fepam"
+      "codigo-ima-al"
+      "codigo-ima-sc"
+      "codigo-iema"
+      "codigo-inea"
+      "codigo-sigor"
+      "codigo-sinir";
+  }
+
+  .cep-rua-container {
+    grid-template-columns: 1fr;
+  }
+
+  .numero-bairro-complemento {
+    grid-template-columns: 1fr;
+  }
+
+  .cidade-estado-container {
+    grid-template-columns: 1fr;
+  }
+
+  .telefone-capacidade-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nome-departamento-container {
+    grid-template-columns: 1fr;
+  }
+
+  .email-telefone-container {
+    grid-template-columns: 1fr;
+  }
+}
