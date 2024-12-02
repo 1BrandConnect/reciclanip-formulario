@@ -165,56 +165,56 @@
         </div>
 
         <div class="sistemas-publicos-input-container">
-          <div class="form-container codigo-feam">
+          <div class="form-container codigo-feam hidden">
             <label for="codigo-feam"
               >Informe o código da unidade para o sistema FEAM *</label
             >
             <input name="codigo-feam" type="text" id="codigo-feam" />
           </div>
 
-          <div class="form-container codigo-fepam">
+          <div class="form-container codigo-fepam hidden">
             <label for="codigo-fepam"
               >Informe o código da unidade para o sistema FEPAM *</label
             >
             <input type="text" id="codigo-fepam" />
           </div>
 
-          <div class="form-container codigo-ima-al">
+          <div class="form-container codigo-ima-al hidden">
             <label for="codigo-ima-al"
               >Informe o código da unidade para o sistema IMA-AL *</label
             >
             <input type="text" id="codigo-ima-al" />
           </div>
 
-          <div class="form-container codigo-ima-sc">
+          <div class="form-container codigo-ima-sc hidden">
             <label for="codigo-ima-sc"
               >Informe o código da unidade para o sistema IMA-SC *</label
             >
             <input type="text" id="codigo-ima-sc" />
           </div>
 
-          <div class="form-container codigo-iema">
+          <div class="form-container codigo-iema hidden">
             <label for="codigo-iema"
               >Informe o código da unidade para o sistema IEMA *</label
             >
             <input type="text" id="codigo-iema" />
           </div>
 
-          <div class="form-container codigo-inea">
+          <div class="form-container codigo-inea hidden">
             <label for="codigo-inea"
               >Informe o código da unidade para o sistema INEA *</label
             >
             <input type="text" id="codigo-inea" />
           </div>
 
-          <div class="form-container codigo-sigor">
+          <div class="form-container codigo-sigor hidden">
             <label for="codigo-sigor"
               >Informe o código da unidade para o sistema SIGOR *</label
             >
             <input type="text" id="codigo-sigor" />
           </div>
 
-          <div class="form-container codigo-sinir">
+          <div class="form-container codigo-sinir hidden">
             <label for="codigo-sinir"
               >Informe o código da unidade para o sistema SINIR *</label
             >
@@ -232,7 +232,15 @@
       <div class="cep-rua-container">
         <div class="form-container cep">
           <label for="cep">CEP</label>
-          <input type="number" id="cep" required />
+          <input
+            type="text"
+            id="cep"
+            required
+            placeholder="XXXXX-XXX"
+            pattern="\d{5}-\d{3}"
+            onblur="buscarEnderecoViaCep()"
+            title="O formato do CEP deve ser XXXXX-XXX"
+          />
         </div>
         <div class="form-container rua">
           <label for="rua">Rua / Avenida</label>
@@ -329,6 +337,6 @@
       <img class="logo" src="/img/logo_poweredby_semdegrade.png" alt="" />
     </div>
 
-    <script src="/js/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
